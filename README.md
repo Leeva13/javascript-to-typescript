@@ -1,10 +1,10 @@
 # JavaScript to TypeScript Project
 
-Цей проект був конвертований з JavaScript до TypeScript для покращення типізації та забезпечення кращої підтримки коду.
+This project was converted from JavaScript to TypeScript to improve typing and provide better code support.
 
-## Посилання
+## Links
 
-- **Гілка `feature/tsconfig`:** [https://github.com/Leeva13/javascript-to-typescript/tree/feature/tsconfig](https://github.com/Leeva13/javascript-to-typescript/tree/feature/tsconfig)
+- **Branch `feature/tsconfig`:** [https://github.com/Leeva13/javascript-to-typescript/tree/feature/tsconfig](https://github.com/Leeva13/javascript-to-typescript/tree/feature/tsconfig)
 - **GitHub Pages:** [https://Leeva13.github.io/javascript-to-typescript/](https://Leeva13.github.io/javascript-to-typescript/)
 
 ### Description of interactivity
