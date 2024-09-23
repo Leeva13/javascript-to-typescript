@@ -2,9 +2,8 @@
 
 This project was converted from JavaScript to TypeScript to improve typing and provide better code support.
 
-## Links
+## Link
 
-- **Branch `feature/tsconfig`:** [https://github.com/Leeva13/javascript-to-typescript/tree/feature/tsconfig](https://github.com/Leeva13/javascript-to-typescript/tree/feature/tsconfig)
 - **GitHub Pages:** [https://Leeva13.github.io/javascript-to-typescript/](https://Leeva13.github.io/javascript-to-typescript/)
 
 ### Description of interactivity
