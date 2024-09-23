@@ -1,3 +1,12 @@
+# JavaScript to TypeScript Project
+
+Цей проект був конвертований з JavaScript до TypeScript для покращення типізації та забезпечення кращої підтримки коду.
+
+## Посилання
+
+- **Гілка `feature/tsconfig`:** [https://github.com/Leeva13/javascript-to-typescript/tree/feature/tsconfig](https://github.com/Leeva13/javascript-to-typescript/tree/feature/tsconfig)
+- **GitHub Pages:** [https://Leeva13.github.io/javascript-to-typescript/](https://Leeva13.github.io/javascript-to-typescript/)
+
 ### Description of interactivity
 
 1. modal windows:**.
