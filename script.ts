@@ -94,10 +94,17 @@ function findAvailableClassrooms(timeSlot: TimeSlot, dayOfWeek: DayOfWeek): stri
 }
 
 // Функція для отримання розкладу професора
-function getProfessorSchedule(professorId: number): Lesson[] {
-    return schedule.filter(lesson => lesson.professorId === professorId);
-}
+function getProfessorSchedule(professorId: number) {
+    const professorLessons = schedule.filter(function (lesson) {
+        return lesson.professorId === professorId;
+    });
 
+    if (professorLessons.length === 0) {
+        console.log(`Професор з id ${professorId} не має запланованих занять`);
+    } else {
+        return professorLessons;
+    }
+}
 
 
 // Крок 5: Обробка конфліктів та валідація

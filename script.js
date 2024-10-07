@@ -38,7 +38,16 @@ function findAvailableClassrooms(timeSlot, dayOfWeek) {
 }
 // Функція для отримання розкладу професора
 function getProfessorSchedule(professorId) {
-    return schedule.filter(function (lesson) { return lesson.professorId === professorId; });
+    const professorLessons = schedule.filter(function (lesson) {
+        return lesson.professorId === professorId;
+    });
+
+    if (professorLessons.length === 0) {
+        console.log(`Професор з id ${professorId} не має запланованих занять`);
+        return [];
+    } else {
+        return professorLessons;
+    }
 }
 // Функція для валідації заняття
 function validateLesson(lesson) {
@@ -116,35 +125,47 @@ function cancelLesson(lessonId) {
 }
 
 
-// Приклад використання: Крок 4 Функції пошуку та фільтрації
-// Додаємо деяких професорів
-addProfessor({ id: 1, name: "John Doe", department: "Computer Science" });
-addProfessor({ id: 2, name: "Jane Smith", department: "Mathematics" });
-// Шукаємо доступні аудиторії на 8:30-10:00 у понеділок
-var availableClassrooms = findAvailableClassrooms("8:30-10:00", "Monday");
-console.log(availableClassrooms); // Виведе номери доступних аудиторій
+// ПРИКЛАДИ 
+
+// ТЕСТУВАННЯ 
+
+classrooms = [
+    { number: "101", capacity: 30 },
+    { number: "102", capacity: 25 },
+    { number: "103", capacity: 20 }
+];
+
+courses = [
+    { id: 1, name: "Math", type: "Practice" },
+    { id: 2, name: "Physics", type: "Lecture" }
+];
+
+professors = [
+    { id: 1, name: "John Doe", department: "Computer Science" },
+    { id: 2, name: "Jane Smith", department: "Mathematics" }
+];
+
+schedule = [
+    { courseId: 1, professorId: 1, classroomNumber: "101", dayOfWeek: "Monday", timeSlot: "8:30-10:00" },
+    { courseId: 2, professorId: 2, classroomNumber: "102", dayOfWeek: "Monday", timeSlot: "10:00-11:30" }
+];
+
+// Додаємо курси
+courses.push({ id: 1, name: "Math", type: "Practice" });
+courses.push({ id: 2, name: "Physics", type: "Lecture" });
+
+// Пошук вільних аудиторій
+const availableClassrooms = findAvailableClassrooms("8:30-10:00", "Monday");
+console.log("Доступні аудиторії: ", availableClassrooms);  // Наприклад, ['102', '103']
 
 
-// Отримуємо розклад професора John Doe
-var johnDoeSchedule = getProfessorSchedule(1);
-console.log(johnDoeSchedule); // Виведе масив занять професора
-
-
-// Приклад використання: Крок 5 Обробка конфліктів та валідація
-// Створюємо нове заняття
-var newLesson = {
-    courseId: 1,
-    professorId: 1,
-    classroomNumber: "101",
-    dayOfWeek: "Monday",
-    timeSlot: "8:30-10:00"
-};
-// Перевіряємо заняття на конфлікти
-const conflict = validateLesson(newLesson);
-if (conflict) {
-    console.log(`Конфлікт: ${conflict.type} під час ${conflict.lessonDetails.timeSlot}`);
+// Розклад професора John Doe
+const johnDoeSchedule = getProfessorSchedule(1);
+// Виведення даних розкладу професора у зрозумілому форматі
+if (johnDoeSchedule.length > 0) {
+    console.log("Розклад професора John Doe: ", JSON.stringify(johnDoeSchedule, null, 2));
 } else {
-    console.log("Заняття можна додати");
+    console.log("У професора John Doe немає занять");
 }
 
 
