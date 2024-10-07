@@ -17,8 +17,3 @@ This project is an implementation of a University Schedule Management System usi
 - `script.js`: Contains the core logic in JavaScript.
 - `script.ts`: TypeScript version of the code with types and additional validation.
 - `tsconfig.json`: TypeScript configuration file.
-
-## How to Run:
-1. Install TypeScript globally:
-   ```bash
-   npm install -g typescript
